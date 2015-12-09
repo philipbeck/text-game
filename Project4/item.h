@@ -23,6 +23,6 @@ public:
 	//constructor
 	HealingPotion();
 	//doing stuff
-	void use(Player &p);
+	void use(Creature &c);
 protected:
 };

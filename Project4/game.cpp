@@ -55,7 +55,8 @@ void Game::help(){
 	cout << "\n------COMMAND LIST------\n"
 		<< "quit: ends game\n"
 		<< "stats: displays players stats\n"
-		<< "surroundings: describes your surroundings\n";
+		<< "surroundings: describes your surroundings\n"
+		<< "move: move to a different location";
 }
 
 //displays all of the players stats
