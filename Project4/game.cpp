@@ -44,6 +44,7 @@ void Game::run(){
 		else if(cmd == "move"){
 			delete location;
 			location = new Location();
+			surroundings();//show surroundings
 		}
 	}
 }
@@ -64,7 +65,8 @@ void Game::playerStats(){
 	cout << "\n------THY STATISTICS------\n"
 		<<"Name: " << player->getName() << endl
 		<< "Level: " << player->getLevel() << endl
-		<< "Health: " << player->getHealth() << "/" << player->getMaxHealth() << endl;
+		<< "Health: " << player->getHealth() << "/" << player->getMaxHealth() << endl
+		<< "Attack: " << player->getAttack() << endl;
 }
 
 void Game::surroundings(){

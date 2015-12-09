@@ -20,9 +20,13 @@ public:
 	//level
 	int getLevel();
 	void setLevel(int Level);
+	//attack
+	int getAttack();
+	void setAttack(int Attack);
 private:
 	std::string name;
 	int health;
 	int maxHealth;
 	int level;
+	int attack;
 };

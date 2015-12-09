@@ -8,12 +8,17 @@
 class Item{
 public:
 	//getters and setters
+	//name
 	std::string getName();
 	void setName(std::string Name);
+	//consumable
+	bool getConsumable();
+	void setConsumable(bool Consumable);
 	//doing stuff
 	virtual void use(Creature &c) = 0;
 protected:
 	std::string name;
+	bool consumable;
 };
 
 

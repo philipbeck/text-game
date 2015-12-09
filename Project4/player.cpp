@@ -6,6 +6,7 @@ Player::Player(std::string Name){
 	health = 100;
 	maxHealth = 100;
 	level = 1;
+	attack = 5;
 }
 
 //getters and setters*************************************
@@ -40,4 +41,12 @@ int Player::getLevel(){
 }
 void Player::setLevel(int Level){
 	level = Level;
+}
+
+//attack
+int Player::getAttack(){
+	return attack;
+}
+void Player::setAttack(int Attack){
+	attack = Attack;
 }

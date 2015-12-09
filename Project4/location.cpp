@@ -12,6 +12,13 @@ Location::Location(){
 	name = randomName();
 }
 
+//destructor
+Location::~Location(){
+	for(int i = 0; i < monsters.size(); i++){
+		delete monsters[i];
+	}
+
+}
 
 //getters and setters++++++++++++++++++++++++++++
 std::string Location::getName(){
