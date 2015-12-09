@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "player.h"
+#include "creature.h"
 
 //base item class
 class Item{
@@ -11,7 +11,7 @@ public:
 	std::string getName();
 	void setName(std::string Name);
 	//doing stuff
-	virtual void use(Player &p) = 0;
+	virtual void use(Creature &c) = 0;
 protected:
 	std::string name;
 };

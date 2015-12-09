@@ -17,13 +17,13 @@ HealingPotion::HealingPotion(){
 }
 
 //override use function
-void HealingPotion::use(Player &p){
+void HealingPotion::use(Creature &c){
 	//just 20 for now while I decide where to keep this value
 	int health = 20;
-	if(p.getHealth() + health > p.getMaxHealth()){
-		p.setHealth(p.getMaxHealth());
+	if(c.getHealth() + health > c.getMaxHealth()){
+		c.setHealth(c.getMaxHealth());
 	}
 	else{
-		p.setHealth(p.getHealth() + health);
+		c.setHealth(c.getHealth() + health);
 	}
 }

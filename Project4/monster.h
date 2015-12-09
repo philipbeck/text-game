@@ -2,7 +2,9 @@
 
 #include <string>
 
-class Monster{
+#include "creature.h"
+
+class Monster: public Creature{
 public:
 	//constructors
 	Monster();

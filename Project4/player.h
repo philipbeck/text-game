@@ -2,7 +2,9 @@
 
 #include <string>
 
-class Player{
+#include "creature.h"
+
+class Player: public Creature{
 public:
 	Player(std::string Name);
 	//getters and setters
