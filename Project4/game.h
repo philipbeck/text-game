@@ -1,3 +1,4 @@
+#ifndef GAME_H
 #define GAME_H
 
 #include "player.h"
@@ -23,3 +24,5 @@ private:
 	Player* player;
 	Location* location;
 };
+
+#endif

@@ -1,3 +1,4 @@
+#ifndef PLAYER_H
 #define PLAYER_H
 
 #include <string>
@@ -30,3 +31,5 @@ private:
 	int level;
 	int attack;
 };
+
+#endif

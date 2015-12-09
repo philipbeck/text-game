@@ -14,7 +14,7 @@ Location::Location(){
 
 //destructor
 Location::~Location(){
-	for(int i = 0; i < monsters.size(); i++){
+	for(int i = 0; i < (int)monsters.size(); i++){
 		delete monsters[i];
 	}
 
@@ -41,7 +41,7 @@ std::string Location::randomName(){
 	case 1:
 		return "a plant room";
 	case 2:
-		return "Swaglands";
+		return "Happy Chip Basement";
 	case 3:
 		return "Sinners";
 	case 4:

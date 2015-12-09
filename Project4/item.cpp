@@ -3,6 +3,7 @@
 //base item stuff++++++++++++++++++++++++++++++
 
 //getters and setters
+//name
 std::string Item::getName(){
 	return name;
 }
@@ -10,10 +11,20 @@ void Item::setName(std::string Name){
 	name = Name;
 }
 
+//consumable
+bool Item::getConsumable(){
+	return consumable;
+}
+void Item::setConsumable(bool Consumable){
+	consumable = Consumable;
+}
+
+
 
 //healing potion stuff+++++++++++++++++++++++++
 HealingPotion::HealingPotion(){
 	name = "treble";
+	consumable = true;
 }
 
 //override use function

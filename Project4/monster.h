@@ -1,3 +1,4 @@
+#ifndef MONSTER_H
 #define MONSTER_H
 
 #include <string>
@@ -34,3 +35,5 @@ protected:
 	int maxHealth;
 	int attack;
 };
+
+#endif

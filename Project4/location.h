@@ -1,3 +1,4 @@
+#ifndef LOCATION_H
 #define LOCATION_H
 
 #include <string>
@@ -23,3 +24,5 @@ protected:
 	std::string name;
 	std::vector<Monster*> monsters;
 };
+
+#endif

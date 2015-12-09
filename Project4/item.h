@@ -1,3 +1,4 @@
+#ifndef ITEM_H
 #define ITEM_H
 
 #include <string>
@@ -31,3 +32,5 @@ public:
 	void use(Creature &c);
 protected:
 };
+
+#endif

@@ -1,5 +1,5 @@
+#ifndef CREATURE_H
 #define CREATURE_H
-
 
 //abstract class so all the characters in the game can
 //can use the same items etc.
@@ -11,3 +11,5 @@ public:
 	//max health
 	virtual int getMaxHealth() = 0;
 };
+
+#endif
