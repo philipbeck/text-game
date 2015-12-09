@@ -9,6 +9,13 @@ Player::Player(std::string Name){
 	attack = 5;
 }
 
+//destructor**********************************************
+Player::~Player(){
+	for(int i = 0; i < (int)inventory.size(); i++){
+		delete inventory[i];
+	}
+}
+
 //getters and setters*************************************
 
 //name

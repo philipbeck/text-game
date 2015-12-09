@@ -57,7 +57,7 @@ void Game::help(){
 		<< "quit: ends game\n"
 		<< "stats: displays players stats\n"
 		<< "surroundings: describes your surroundings\n"
-		<< "move: move to a different location";
+		<< "move: move to a different location\n";
 }
 
 //displays all of the players stats

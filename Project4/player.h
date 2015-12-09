@@ -2,12 +2,17 @@
 #define PLAYER_H
 
 #include <string>
+#include <vector>
 
 #include "creature.h"
+#include "item.h"
 
 class Player: public Creature{
 public:
+	//constructors
 	Player(std::string Name);
+	//desctructor
+	~Player();
 	//getters and setters
 	//name
 	std::string getName();
@@ -24,12 +29,20 @@ public:
 	//attack
 	int getAttack();
 	void setAttack(int Attack);
+	/*inventory?
+	std::vector<Item*> getInventory();
+	void setInventory(std::vector<Item*> Inventory);
+	*/
 private:
+	//variables
+	//many of these will end up in the creature class
 	std::string name;
 	int health;
 	int maxHealth;
 	int level;
 	int attack;
+	//dynamic list of items in inventory
+	std::vector<Item*> inventory;
 };
 
 #endif
