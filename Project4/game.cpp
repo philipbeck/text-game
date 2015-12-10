@@ -23,6 +23,19 @@ void Game::run(){
 	string cmd;
 
 	bool done = false;
+
+	//player creation
+	while(true){
+		cout << "what ist thou name good adventurer?\n";
+		//get line instead of cin so cool names with spaces like "Lethal Bizzle" or "Tom Jones"
+		getline(cin, cmd);
+		cout << "is this thy final choice? (y/n)";
+		if(yesOrNo()){
+			player->setName(cmd);
+			break;
+		}
+	}
+
 	while(!done){
 		cout << "\nenter a command\n";
 		cin >> cmd;

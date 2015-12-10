@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
 	string cmd;
-	cout << "Dankventure Game!\n";
+	cout << "Dankventure Game!\n\n";
 
 	Game g;
 
