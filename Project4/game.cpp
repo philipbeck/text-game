@@ -69,7 +69,9 @@ void Game::run(){
 				cout << "you do not have a " << cmd << endl;
 			}
 		}
-
+		else if(cmd == "inventory"){
+			cout << player->showInventory();
+		}
 	}
 }
 
@@ -82,7 +84,8 @@ void Game::help(){
 		<< "stats: displays players stats\n"
 		<< "surroundings: describes your surroundings\n"
 		<< "move: move to a different location\n"
-		<< "use: use an item in your inventory";
+		<< "use: use an item in your inventory\n"
+		<< "inventory: displays inventory\n";
 }
 
 //displays all of the players stats

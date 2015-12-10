@@ -19,22 +19,29 @@ void Item::setConsumable(bool Consumable){
 	consumable = Consumable;
 }
 
+//damage
+int Item::getDamage(){
+	return damage;
+}
+void Item::setDamage(int Damage){
+	damage = Damage;
+}
+
 
 
 //healing potion stuff+++++++++++++++++++++++++
 HealingPotion::HealingPotion(){
 	name = "treble";
 	consumable = true;
+	damage = 30;
 }
 
 //override use function
 void HealingPotion::use(Creature &c){
-	//just 20 for now while I decide where to keep this value
-	int health = 20;
-	if(c.getHealth() + health > c.getMaxHealth()){
+	if(c.getHealth() + damage > c.getMaxHealth()){
 		c.setHealth(c.getMaxHealth());
 	}
 	else{
-		c.setHealth(c.getHealth() + health);
+		c.setHealth(c.getHealth() + damage);
 	}
 }

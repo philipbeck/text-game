@@ -90,3 +90,19 @@ bool Player::use(std::string itemName){
 	return true;
 
 }
+
+std::string Player::showInventory(){
+	std::string inv = "";
+	//if there arent any items just display no items
+	if((int)inventory.size() <= 0){
+		return "\n---NO ITEMS---\n";
+	}
+
+	//if there are items make a list
+	inv += "\n------THOU INVENTORY------\n";
+	for(int i = 0; i < (int)inventory.size(); i++){
+		inv += "-" + inventory[i]->getName() + "\n";
+	}
+
+	return inv;
+}

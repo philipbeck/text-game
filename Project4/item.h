@@ -15,11 +15,17 @@ public:
 	//consumable
 	bool getConsumable();
 	void setConsumable(bool Consumable);
+	//damage
+	int getDamage();
+	void setDamage(int Damage);
 	//doing stuff
 	virtual void use(Creature &c) = 0;
 protected:
 	std::string name;
 	bool consumable;
+	//how much damage something does when used as a 
+	//weapon or how much it heals you
+	int damage;
 };
 
 

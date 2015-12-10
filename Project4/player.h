@@ -29,14 +29,12 @@ public:
 	//attack
 	int getAttack();
 	void setAttack(int Attack);
-	/*inventory? might not need these functions
-	std::vector<Item*> getInventory();
-	void setInventory(std::vector<Item*> Inventory);
-	*/
-
 	//doing stuff
 	int hasItem(std::string itemName);
-	bool use(std::string itemName);//returns false if item not used and true if it is
+	//returns false if item not used and true if it is
+	bool use(std::string itemName);
+	//makes a string that displays inventory
+	std::string showInventory();
 private:
 	//variables
 	//many of these will end up in the creature class
