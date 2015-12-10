@@ -14,8 +14,13 @@ Location::Location(){
 
 //destructor
 Location::~Location(){
+	//deleting all of the monsters in the array
 	for(int i = 0; i < (int)monsters.size(); i++){
 		delete monsters[i];
+	}
+	//deleting all the items on the floor
+	for(int i = 0; i < (int)items.size(); i++){
+		delete items[i];
 	}
 
 }
@@ -30,7 +35,14 @@ void Location::setName(std::string Name){
 }
 
 
-//protected stuff
+//show items
+std::string Location::showItems(){
+	//this will make a display the list of items in this location
+	return "";
+}
+
+
+//protected stuff************************************************
 
 std::string Location::randomName(){
 	int i = rand()%5;

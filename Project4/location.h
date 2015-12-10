@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "monster.h"
+#include "item.h"
 
 class Location{
 public:
@@ -16,6 +17,9 @@ public:
 	//name
 	std::string getName();
 	void setName(std::string Name);
+	//doing stuff
+	//shows inventory as a string
+	std::string showItems();
 protected:
 	//fuctions
 	std::string randomName();
@@ -23,6 +27,7 @@ protected:
 	//variables
 	std::string name;
 	std::vector<Monster*> monsters;
+	std::vector<Item*> items;
 };
 
 #endif
