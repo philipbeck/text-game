@@ -29,10 +29,14 @@ public:
 	//attack
 	int getAttack();
 	void setAttack(int Attack);
-	/*inventory?
+	/*inventory? might not need these functions
 	std::vector<Item*> getInventory();
 	void setInventory(std::vector<Item*> Inventory);
 	*/
+
+	//doing stuff
+	int hasItem(std::string itemName);
+	void use(std::string itemName);
 private:
 	//variables
 	//many of these will end up in the creature class
