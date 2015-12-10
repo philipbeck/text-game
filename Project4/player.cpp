@@ -3,10 +3,12 @@
 //constructors********************************************
 Player::Player(std::string Name){
 	name = Name;
-	health = 100;
+	health = 50;
 	maxHealth = 100;
 	level = 1;
 	attack = 5;
+	//temporary stuff for testing
+	inventory.push_back(new HealingPotion);
 }
 
 //destructor**********************************************
@@ -71,11 +73,11 @@ int Player::hasItem(std::string itemName){
 }
 
 
-void Player::use(std::string itemName){
+bool Player::use(std::string itemName){
 	int item = hasItem(itemName);
 	//if the item doesn't exist leave the function
 	if(item == -1){
-		return;
+		return false;
 	}
 
 	inventory[item]->use(*this);
@@ -84,5 +86,7 @@ void Player::use(std::string itemName){
 		delete inventory[item];
 		inventory.erase(inventory.begin() + item);
 	}
+
+	return true;
 
 }

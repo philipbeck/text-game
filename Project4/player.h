@@ -36,7 +36,7 @@ public:
 
 	//doing stuff
 	int hasItem(std::string itemName);
-	void use(std::string itemName);
+	bool use(std::string itemName);//returns false if item not used and true if it is
 private:
 	//variables
 	//many of these will end up in the creature class

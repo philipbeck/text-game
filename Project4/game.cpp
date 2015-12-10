@@ -46,6 +46,17 @@ void Game::run(){
 			location = new Location();
 			surroundings();//show surroundings
 		}
+		else if(cmd == "use"){
+			cout << "use what?\n";
+			cin >> cmd;
+			if(player->use(cmd)){
+				cout << "you use your " << cmd << endl;
+			}
+			else{
+				cout << "you do not have a " << cmd << endl;
+			}
+		}
+
 	}
 }
 
@@ -57,7 +68,8 @@ void Game::help(){
 		<< "quit: ends game\n"
 		<< "stats: displays players stats\n"
 		<< "surroundings: describes your surroundings\n"
-		<< "move: move to a different location\n";
+		<< "move: move to a different location\n"
+		<< "use: use an item in your inventory";
 }
 
 //displays all of the players stats
