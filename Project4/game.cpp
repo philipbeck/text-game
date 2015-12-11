@@ -30,6 +30,9 @@ void Game::run(){
 	getline(cin, cmd);
 	player->setName(cmd);
 
+
+	surroundings();
+
 	while(!done){
 		cout << "\nenter a command\n";
 		cin >> cmd;
@@ -92,7 +95,8 @@ void Game::playerStats(){
 }
 
 void Game::surroundings(){
-	cout << "you are in " << location->getName() << endl;
+	cout << "you are in " << location->getName() << endl
+		<< "Items: " << location->showItems() << endl;
 }
 
 //---------------------------------------------

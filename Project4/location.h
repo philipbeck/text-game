@@ -23,6 +23,7 @@ public:
 protected:
 	//fuctions
 	std::string randomName();
+	void randomizeItems();
 
 	//variables
 	std::string name;

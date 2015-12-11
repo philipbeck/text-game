@@ -10,6 +10,7 @@ Location::Location(){
 	//so the random stuff is actually random
 	srand((int)time(NULL));
 	name = randomName();
+	randomizeItems();//spread items about the room
 }
 
 //destructor
@@ -38,7 +39,18 @@ void Location::setName(std::string Name){
 //show items
 std::string Location::showItems(){
 	//this will make a display the list of items in this location
-	return "";
+	if(items.size() == 0){
+		return "none";
+	}
+	//string to be returned
+	std::string str = "";
+
+	for( int i = 0; i < items.size(); i++){
+		//this means there is an extra comma which I will fix later
+		str += items[i]->getName() + ", ";
+	}
+
+	return str;
 }
 
 
@@ -60,5 +72,14 @@ std::string Location::randomName(){
 		return "Easy Street";
 	default:
 		return "something went wrong";
+	}
+}
+
+//randomly puts items in the location
+void Location::randomizeItems(){
+
+	for(int i = 0; i < rand()%4; i++){
+		//this will get more complicated once I make more items
+		items.push_back(new HealingPotion());
 	}
 }
