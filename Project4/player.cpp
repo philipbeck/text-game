@@ -62,7 +62,13 @@ void Player::setAttack(int Attack){
 
 //doing stuff
 
+void Player::addItem(Item* item){
+	//this can be made better later
+	inventory.push_back(item);
+}
+
 int Player::hasItem(std::string itemName){
+	inventory.shrink_to_fit();
 	for(int i = 0; i < (int)inventory.size(); i++){
 		if(inventory[i]->getName() == itemName){
 			return i;

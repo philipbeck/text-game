@@ -30,6 +30,8 @@ public:
 	int getAttack();
 	void setAttack(int Attack);
 	//doing stuff
+	void addItem(Item* item);
+	//checks it the player has an item and returns the index of it or -1 if the item isn't there
 	int hasItem(std::string itemName);
 	//returns false if item not used and true if it is
 	bool use(std::string itemName);

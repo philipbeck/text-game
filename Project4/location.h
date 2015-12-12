@@ -20,6 +20,8 @@ public:
 	//doing stuff
 	//shows inventory as a string
 	std::string showItems();
+	Item* giveItem(std::string item);
+	int hasItem(std::string item);//returns the position in the array of the item
 protected:
 	//fuctions
 	std::string randomName();

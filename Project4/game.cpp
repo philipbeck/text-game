@@ -30,7 +30,7 @@ void Game::run(){
 	getline(cin, cmd);
 	player->setName(cmd);
 
-
+	//show where character first starts the game
 	surroundings();
 
 	while(!done){
@@ -69,6 +69,17 @@ void Game::run(){
 		else if(cmd == "inventory"){
 			cout << player->showInventory();
 		}
+		else if(cmd == "grab"){
+			//prompt
+			cout << "grab what?\n";
+			//get item
+			cin >> cmd;
+			if(location->hasItem(cmd) >= 0){
+				player->addItem(location->giveItem(cmd));
+			}
+
+		}
+
 	}
 }
 
@@ -82,7 +93,8 @@ void Game::help(){
 		<< "surroundings: describes your surroundings\n"
 		<< "move: move to a different location\n"
 		<< "use: use an item in your inventory\n"
-		<< "inventory: displays inventory\n";
+		<< "inventory: displays inventory\n"
+		<< "grab: pick up an item\n";
 }
 
 //displays all of the players stats

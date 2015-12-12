@@ -45,13 +45,39 @@ std::string Location::showItems(){
 	//string to be returned
 	std::string str = "";
 
-	for( int i = 0; i < items.size(); i++){
+	for( int i = 0; i < (int)items.size(); i++){
 		//this means there is an extra comma which I will fix later
 		str += items[i]->getName() + ", ";
 	}
 
 	return str;
 }
+
+Item* Location::giveItem(std::string it){
+	HealingPotion* heal;
+
+	
+	int i = hasItem(it);
+
+	if(i >= 0){
+		return items[i];
+	}
+
+
+	return heal;
+}
+
+int Location::hasItem(std::string item){
+	//shrink incase something has been deleted
+	items.shrink_to_fit();
+	for(int i = 0; i < (int)items.size(); i++){
+		if(items[i]->getName() == item){
+			return i;
+		}
+	}
+	return -1;
+}
+
 
 
 //protected stuff************************************************
