@@ -39,7 +39,7 @@ void Location::setName(std::string Name){
 //show items
 std::string Location::showItems(){
 	//this will make a display the list of items in this location
-	if(items.size() == 0){
+	if(items.size() < 1){
 		return "none";
 	}
 	//string to be returned
@@ -54,24 +54,24 @@ std::string Location::showItems(){
 }
 
 Item* Location::giveItem(std::string it){
-	HealingPotion* heal;
-
-	
 	int i = hasItem(it);
 
 	if(i >= 0){
+		//item object to be returned
 		return items[i];
 	}
 
-
-	return heal;
+	return NULL;
 }
 
 int Location::hasItem(std::string item){
 	//shrink incase something has been deleted
 	items.shrink_to_fit();
 	for(int i = 0; i < (int)items.size(); i++){
-		if(items[i]->getName() == item){
+		if(items[i] == NULL){
+			items.erase(items.begin() + i);
+		}
+		else if(items[i]->getName() == item){
 			return i;
 		}
 	}

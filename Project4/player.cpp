@@ -1,5 +1,7 @@
 #include "player.h"
 
+#include <iostream>
+
 //constructors********************************************
 Player::Player(std::string Name){
 	name = Name;
@@ -63,11 +65,23 @@ void Player::setAttack(int Attack){
 //doing stuff
 
 void Player::addItem(Item* item){
-	//this can be made better later
-	inventory.push_back(item);
+	//horrible if statement to avoid the memory problems
+	if(item == NULL){
+		return;
+	}
+	else if(item->getName() == "treble"){
+		inventory.push_back(new HealingPotion());
+	}
+	else{
+		std::cout << item->getName() << " ";;
+		std::cout << "something went wrong\n";
+	}
+
+	delete item;
 }
 
 int Player::hasItem(std::string itemName){
+	//this part may be causing memory leaks
 	inventory.shrink_to_fit();
 	for(int i = 0; i < (int)inventory.size(); i++){
 		if(inventory[i]->getName() == itemName){
