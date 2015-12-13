@@ -20,8 +20,14 @@ Location::~Location(){
 		delete monsters[i];
 	}
 	//deleting all the items on the floor
+	items.shrink_to_fit();
 	for(int i = 0; i < (int)items.size(); i++){
-		delete items[i];
+		std::cout << i;
+		//if thing to make sure something isn't deleted if it already has been
+		if(items[i]->getName() != ""){
+			std::cout << "item name: " << items[i]->getName() << "\n";
+			delete items[i];
+		}
 	}
 
 }
@@ -47,8 +53,14 @@ std::string Location::showItems(){
 
 	for( int i = 0; i < (int)items.size(); i++){
 		//this means there is an extra comma which I will fix later
+		while(items[i]->getName() == ""){
+			items.erase(items.begin() + i);
+		}
+
 		str += items[i]->getName() + ", ";
 	}
+	//shrink vector to the right size
+	items.shrink_to_fit();
 
 	return str;
 }
@@ -68,7 +80,7 @@ int Location::hasItem(std::string item){
 	//shrink incase something has been deleted
 	items.shrink_to_fit();
 	for(int i = 0; i < (int)items.size(); i++){
-		if(items[i] == NULL){
+		if(items[i]->getName() == ""){
 			items.erase(items.begin() + i);
 		}
 		else if(items[i]->getName() == item){
